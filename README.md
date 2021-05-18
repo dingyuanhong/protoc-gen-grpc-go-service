@@ -10,5 +10,5 @@ go get github.com/nstogner/protoc-gen-grpc-go-service
 
 cd $GOPATH/github.com/nstogner/protoc-gen-grpc-go-service/example
 # This assumes that $GOPATH/bin is a part of $PATH
-protoc --grpc-go-service_out=./grpcd example.proto
+protoc --grpc-go-service_out=GoPrefix=protos,GoPackageName=services,GoImport=\"master/protos\":./services/ protos/task.proto
 ```
