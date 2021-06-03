@@ -200,7 +200,7 @@ func (s {{$.Name}}Service) {{.Name}}(stream {{$.GoPrefix}}.{{.StreamName}}) erro
 		input, err := stream.Recv()
 		if err == io.EOF {
 			// TODO: Send some meaningful output
-			return stream.SendAndClose(&{{$.GoPrefix}}{{.TrimmedOutput}}{})
+			return stream.SendAndClose(&{{$.GoPrefix}}.{{.TrimmedOutput}}{})
 		}
 		if err != nil {
 			return err
